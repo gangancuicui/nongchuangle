@@ -1,0 +1,56 @@
+/* 标签栏样式 */
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-left: 20rpx;
+}
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  padding: 12rpx 0;
+  border-radius: 30rpx;
+  color: #fff;
+  margin-right: 20rpx;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+.tab text {
+  color: #000;
+}
+.tab.active {
+  background-color: #008000;
+  color: #0a0;
+}
+.tab.active text {
+  color: #000;
+}
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+/* 订单列表项样式 */
+.order-item {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+.num {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+text {
+  font-size: 14px;
+  color: #666;
+}
+

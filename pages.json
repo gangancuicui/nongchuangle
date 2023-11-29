@@ -1,0 +1,239 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	    {
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/cate/cate",
+            "style" :                                                                                    
+            {
+              
+                "enablePullDownRefresh": false
+            }
+            
+        },
+        {
+            "path" : "pages/cart/cart",
+            "style" :                                                                                    
+            {
+          
+                "enablePullDownRefresh": false
+            }
+            
+        },
+        {
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+              
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/news/news",
+            "style" :                                                                                    
+            {
+                
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        
+    ],
+	"subPackages": [
+		    {
+		      "path": "pages/home/home",
+		      "style": {}
+		    },
+		    {
+		      "path": "pages/cate/cate",
+		      "style": {}
+		    },
+		    {
+		      "path": "pages/cart/cart",
+		      "style": {}
+		    },
+		    {
+		      "path": "pages/my/my",
+		      "style": {}
+		    }
+		  ],
+		  "subPackages": [
+		    {
+		      "root": "subpkg",
+		      "pages": [{
+                    "path" : "goods_detail/goods_detail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "goods_list/goods_list",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": true
+					
+                }
+                
+                }
+                ,{
+                    "path" : "search/search",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "pay-result/pay-result",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "news-detail/news-detail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+                ,{
+                    "path" : "editor/editor",
+					"usingComponents": {
+					    "richText":"../../components/richText/richText"
+					  },
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "发布文章",
+                    "enablePullDownRefresh": false
+					
+                }
+                
+                }
+                ,{
+                    "path" : "pl/pl",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "发表评论",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "test/test",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "my-news/my-news",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的文章",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "warnning/warnning",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "错误",
+                    "enablePullDownRefresh": false
+                }
+                
+                },
+				{
+				    "path" : "smart/smart",
+				    "style" :                                                                                    
+				    {
+				        "navigationBarTitleText": "气象预报",
+				        "enablePullDownRefresh": true,
+						"backgroundTextStyle": "dark"  //下拉 loading 的样式，仅支持 dark/light
+						
+				    }
+				    
+				}
+                ,{
+                    "path" : "order-detail/order-detail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "订单详情",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "my-order/my-order",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的订单",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		    }
+	],
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/_tao.png",
+				"selectedIconPath": "static/tao.png"
+			},
+			{
+				"pagePath": "pages/cate/cate",
+				"text": "分类",
+				"iconPath": "static/_category.png",
+				"selectedIconPath": "static/category.png"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"text": "购物车",
+				"iconPath": "static/_cart.png",
+				"selectedIconPath": "static/cart.png"
+			},
+			{
+				"pagePath": "pages/news/news",
+				"text": "新闻",
+				"iconPath": "static/text.png",
+				"selectedIconPath": "static/_text.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/_my.png",
+				"selectedIconPath": "static/my.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "农乐乐",
+		"navigationBarBackgroundColor": "#00aa00",
+		"backgroundColor": "#FFFFFF"
+	},
+	"uniIdRouter": {}
+}

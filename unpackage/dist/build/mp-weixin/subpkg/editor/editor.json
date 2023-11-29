@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布文章",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "rich-text": "/components/richText/richText"
+  }
+}

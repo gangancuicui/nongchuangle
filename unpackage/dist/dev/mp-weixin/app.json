@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/news/news"
+  ],
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        "goods_detail/goods_detail",
+        "goods_list/goods_list",
+        "search/search",
+        "pay-result/pay-result",
+        "news-detail/news-detail",
+        "editor/editor",
+        "pl/pl",
+        "test/test",
+        "my-news/my-news",
+        "warnning/warnning",
+        "smart/smart",
+        "order-detail/order-detail",
+        "my-order/my-order"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "农乐乐",
+    "navigationBarBackgroundColor": "#00aa00",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/_tao.png",
+        "selectedIconPath": "static/tao.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "static/_category.png",
+        "selectedIconPath": "static/category.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/_cart.png",
+        "selectedIconPath": "static/cart.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "static/text.png",
+        "selectedIconPath": "static/_text.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/_my.png",
+        "selectedIconPath": "static/my.png"
+      }
+    ]
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdateBackground",
+    "chooseAddress"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序将使用定位功能"
+    }
+  },
+  "usingComponents": {}
+}

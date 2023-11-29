@@ -1,0 +1,1 @@
+<view><view class="pay-result"><view class="pay-status"><t-icon class="text" vue-id="4431d1cc-1" name="check-circle-filled" size="60rpx" color="#47D368" bind:__l="__l"></t-icon><text>支付成功</text></view><view class="btn-wrapper"><view data-event-opts="{{[['tap',[['return1',['$event']]]]]}}" class="status-btn" bindtap="__e">返回</view></view></view></view>

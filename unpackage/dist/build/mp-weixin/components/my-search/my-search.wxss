@@ -1,0 +1,1 @@
+.container{background-color:#0a0;height:100rpx;padding:100rpx;padding:0 20rpx;display:flex;align-items:center}.my-search-box{height:72rpx;background-color:#fff;width:100%;display:flex;align-items:center;justify-content:center}.searchtext{font-size:30rpx;margin-left:10rpx}

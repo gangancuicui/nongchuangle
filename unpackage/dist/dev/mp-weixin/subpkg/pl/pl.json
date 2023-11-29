@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发表评论",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "rich-text": "/components/richText/richText"
+  }
+}

@@ -1,0 +1,57 @@
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.section {
+    margin-bottom: 20px;
+}
+.uni-list-cell-left{
+	  font-size: 36rpx;
+	      font-weight: bold;
+	      margin-bottom: 20px;
+}
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.input {
+    display: flex;
+    align-items: center;
+	margin-top: 10px;
+}
+picker,
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    flex: 1;
+	 margin-bottom: 10px;
+}
+.button1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007aff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+	height: 100rpx;
+	width: 500rpx;
+	font-size: 24rpx;
+}
+editor {
+    height: 300px;
+}
+button{
+	  border-radius: 30rpx;
+}
+
