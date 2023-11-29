@@ -22,7 +22,7 @@
 		<my-settle></my-settle>
 	</view>
 	<view class="empty" v-else>
-		<text class="empty-text">sffgsdfgsdfg</text>
+		<text class="empty-text">sffgsdfgs555dfg</text>
 	</view>
 		
 	</view>
