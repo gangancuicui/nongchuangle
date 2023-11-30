@@ -22,7 +22,7 @@
 		<my-settle></my-settle>
 	</view>
 	<view class="empty" v-else>
-		<text class="empty-text">sffgsdfgs555dfg</text>
+		<text class="empty-text">是空的捏</text>
 	</view>
 		
 	</view>
