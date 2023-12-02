@@ -3,6 +3,80 @@
         <view :style="'height:' + (textTool ? '200' : '100') + 'rpx;'"></view>
         <view class="page-body">
             <view class="wrapper">
+				<view class="editor-toolbar" @tap="format">
+				    <view class="toolbar-2" >
+				        <view class="tool-item-cell">
+				            <view class="tool-item-box">
+				                <view class="cell-rg-shadow"></view>
+				                <scroll-view scroll-x class="flex-sb" style="height: 70rpx; white-space: nowrap">
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-charutupian" data-tool_name="insertImage" @tap.native="toolEvent($event, { tool_name: 'insertImage' })"></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-font" data-tool_name="showTextTool" @tap.native="toolEvent($event, { tool_name: 'showTextTool' })"></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i
+				                            :class="'iconfont icon-format-header-1 ' + (formats.header === 1 ? 'ql-active' : '')"
+				                            data-tool_name="text_H1"
+				                            data-name="header"
+				                            :data-value="1"
+				                            @tap.native="toolEvent($event, { tool_name: 'text_H1', name: 'header', value: 1 })"
+				                        ></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-date" data-tool_name="insertDate" @tap.native="toolEvent($event, { tool_name: 'insertDate' })"></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-undo" data-tool_name="undo" @tap.native="toolEvent($event, { tool_name: 'undo' })"></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-redo" data-tool_name="redo" @tap.native="toolEvent($event, { tool_name: 'redo' })"></i>
+				                    </view>
+				                    <view class="tool-item">
+				                        <i class="iconfont icon-shanchu" data-tool_name="clear" @tap.native="toolEvent($event, { tool_name: 'clear' })"></i>
+				                    </view>
+				                </scroll-view>
+				            </view>
+				        </view>
+				    </view>
+				    <view class="toolbar-1" v-if="textTool">
+				        <scroll-view scroll-x style="height: 70rpx; white-space: nowrap">
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-zitijiacu ' + (formats.bold ? 'ql-active' : '')" data-name="bold"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-zitixieti ' + (formats.italic ? 'ql-active' : '')" data-name="italic"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-zitixiahuaxian ' + (formats.underline ? 'ql-active' : '')" data-name="underline"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i class="iconfont icon-fengexian" @tap.native="insertDivider"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-zuoduiqi ' + (formats.align === 'left' ? 'ql-active' : '')" data-name="align" data-value="left"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-juzhongduiqi ' + (formats.align === 'center' ? 'ql-active' : '')" data-name="align" data-value="center"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-youduiqi ' + (formats.align === 'right' ? 'ql-active' : '')" data-name="align" data-value="right"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-zuoyouduiqi ' + (formats.align === 'justify' ? 'ql-active' : '')" data-name="align" data-value="justify"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-youxupailie ' + (formats.list === 'ordered' ? 'ql-active' : '')" data-name="list" data-value="ordered"></i>
+				            </view>
+				            <view class="tool-item">
+				                <i :class="'iconfont icon-wuxupailie ' + (formats.list === 'bullet' ? 'ql-active' : '')" data-name="list" data-value="bullet"></i>
+				            </view>
+				        </scroll-view>
+				    </view>
                 <editor
                     id="editor"
                     class="ql-container"
@@ -17,85 +91,10 @@
                     @blur="bindblur"
                     @input="bindinput"
                 ></editor>
+				
             </view>
         </view>
-        <view class="editor-toolbar" @tap="format">
-            <view class="toolbar-2" >
-                <view class="tool-item-cell">
-                    <view class="tool-item-box">
-                        <view class="cell-rg-shadow"></view>
-                        <scroll-view scroll-x class="flex-sb" style="height: 70rpx; white-space: nowrap">
-                            <view class="tool-item">
-                                <i class="iconfont icon-charutupian" data-tool_name="insertImage" @tap.native="toolEvent($event, { tool_name: 'insertImage' })"></i>
-                            </view>
-                            <view class="tool-item">
-                                <i class="iconfont icon-font" data-tool_name="showTextTool" @tap.native="toolEvent($event, { tool_name: 'showTextTool' })"></i>
-                            </view>
-                            <view class="tool-item">
-                                <i
-                                    :class="'iconfont icon-format-header-1 ' + (formats.header === 1 ? 'ql-active' : '')"
-                                    data-tool_name="text_H1"
-                                    data-name="header"
-                                    :data-value="1"
-                                    @tap.native="toolEvent($event, { tool_name: 'text_H1', name: 'header', value: 1 })"
-                                ></i>
-                            </view>
-                            <view class="tool-item">
-                                <i class="iconfont icon-date" data-tool_name="insertDate" @tap.native="toolEvent($event, { tool_name: 'insertDate' })"></i>
-                            </view>
-                            <view class="tool-item">
-                                <i class="iconfont icon-undo" data-tool_name="undo" @tap.native="toolEvent($event, { tool_name: 'undo' })"></i>
-                            </view>
-                            <view class="tool-item">
-                                <i class="iconfont icon-redo" data-tool_name="redo" @tap.native="toolEvent($event, { tool_name: 'redo' })"></i>
-                            </view>
-                            <view class="tool-item">
-                                <i class="iconfont icon-shanchu" data-tool_name="clear" @tap.native="toolEvent($event, { tool_name: 'clear' })"></i>
-                            </view>
-                        </scroll-view>
-                    </view>
-                </view>
-                <!--<lable class="save-icon" :style="'background:' + appColorConfig.check_color" @tap.native="getEditorContent">
-                    {{ buttonTxt }}
-                </lable>-->
-            </view>
-            <view class="toolbar-1" v-if="textTool">
-                <scroll-view scroll-x style="height: 70rpx; white-space: nowrap">
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-zitijiacu ' + (formats.bold ? 'ql-active' : '')" data-name="bold"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-zitixieti ' + (formats.italic ? 'ql-active' : '')" data-name="italic"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-zitixiahuaxian ' + (formats.underline ? 'ql-active' : '')" data-name="underline"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i class="iconfont icon-fengexian" @tap.native="insertDivider"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-zuoduiqi ' + (formats.align === 'left' ? 'ql-active' : '')" data-name="align" data-value="left"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-juzhongduiqi ' + (formats.align === 'center' ? 'ql-active' : '')" data-name="align" data-value="center"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-youduiqi ' + (formats.align === 'right' ? 'ql-active' : '')" data-name="align" data-value="right"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-zuoyouduiqi ' + (formats.align === 'justify' ? 'ql-active' : '')" data-name="align" data-value="justify"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-youxupailie ' + (formats.list === 'ordered' ? 'ql-active' : '')" data-name="list" data-value="ordered"></i>
-                    </view>
-                    <view class="tool-item">
-                        <i :class="'iconfont icon-wuxupailie ' + (formats.list === 'bullet' ? 'ql-active' : '')" data-name="list" data-value="bullet"></i>
-                    </view>
-                </scroll-view>
-            </view>
+        
         </view>
     </view>
 </template>
@@ -414,16 +413,6 @@ export default {
 @import './assets/iconfont.css';
 page {
     background: #f8f8f8;
-}
-.page-body {
-    padding-bottom: 100rpx;
-}
-.editor-toolbar {
-    position: fixed;
-    top: 480rpx;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
 }
 
 .editor-toolbar i {

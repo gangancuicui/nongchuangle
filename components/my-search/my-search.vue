@@ -44,7 +44,6 @@
 	background-color:  #00aa00;
 	height: 100rpx;
 	padding: 100rpx;
-	
 	padding: 0 20rpx;
 	display: flex;
 	align-items: center;

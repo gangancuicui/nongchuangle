@@ -125,8 +125,10 @@
   justify-content: flex-start;
   align-items: center;
   height: 100%;
-  padding-left: 20rpx;
+  // padding-left: 20rpx;
+  margin: 10rpx;
 }
+
 
 .tab {
   flex: 1;
@@ -138,18 +140,18 @@
 	  color: black;
   }
   padding: 12rpx 0;
-  border-radius: 30rpx;
+  border-radius: 20rpx;
   color: #ffffff;
-  margin-right: 20rpx;
+  margin:0 10rpx;
   background-color: transparent;
   transition: background-color 0.3s;
 }
 
 .tab.active {
-  background-color: green;
+  background-color: rgb(0,170,0);
   color: #00aa00;
   text{
-  	  color: black;
+  	  color: #fff;
   }
 }
 

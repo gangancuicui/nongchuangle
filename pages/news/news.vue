@@ -95,7 +95,7 @@
 
 <style lang="scss">
 .container {
-  padding: 20rpx;
+  padding: 10rpx;
   background-color: #f0f8f5;
 }
 

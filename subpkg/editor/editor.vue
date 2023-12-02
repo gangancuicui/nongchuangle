@@ -1,5 +1,5 @@
 <template>
-    <view>
+    <view class="container">
 		<view class="title">
 			<text>请输入标题</text>
 			<view class="input">
@@ -365,7 +365,9 @@ export default {
 <style>
 .container {
     max-width: 600px;
-    margin: 0 auto;
+    /* margin: 10rpx auto; */
+	padding: 20rpx;
+	
   }
 
   .title {
