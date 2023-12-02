@@ -92,6 +92,8 @@
 	}
 	.title-text{
 		margin-left: 20rpx;
+		font-size: 30rpx;
+		font-weight: 700;
 	}
 	.empty{
 		 display: flex;

@@ -1,8 +1,6 @@
 <template>
 	<view class="con">
-		<view class="search">
-			<my-search @click="search"></my-search>
-		</view>
+		<my-search @click="search"></my-search>
 		<view>
 			<swiper :indicator-dots='true' :autoplay="True" :interval="3000" :duration="1000" :circular="true">
 				<swiper-item v-for="(item,i) in swiperList" :key="i">
@@ -210,15 +208,17 @@
 	border-bottom: 20rpx;
 }
 .nav-item{
-	
+	display: flex;
 	.cate{
 		width: 50%;
-		height: 100rpx;
-		background-color: #9bffc3;
+		height: 75rpx;
+		background-color: rgb(0, 180, 0);
 		float:left;
+		margin-left: 10rpx;
 		//border: 1px solid #ccc;
-		border-top-left-radius: 46rpx; //左上角圆角
-		border-bottom-left-radius: 46rpx; //左下角圆角
+		border-top-left-radius: 36rpx; //左上角圆角
+		border-bottom-left-radius: 36rpx; //左下角圆角
+		color: #fff;
 		.text{
 			width: 100%;
 			height: 100%;
@@ -230,12 +230,14 @@
 	}
 	.weather{
 		width: 50%;
-		height: 100rpx;
-		background-color: #00ffff;
+		height: 75rpx;
+		background-color: rgb(85, 132, 188);
 		float:right;
+		margin-right: 10rpx;
 		//border: 1px solid #ccc;
-		border-top-right-radius: 46rpx; //右上角圆角
-		border-bottom-right-radius: 46rpx; //右下角圆角
+		border-top-right-radius: 36rpx; //右上角圆角
+		border-bottom-right-radius: 36rpx; //右下角圆角
+		color: #fff;
 		.text{
 			 width: 100%;
 			 height: 100%;
@@ -351,9 +353,4 @@
 	    justify-content: center;
 	}
 	
-	.search{
-		position: sticky;
-		top: 0;
-		z-index: 999;
-	}
 </style>

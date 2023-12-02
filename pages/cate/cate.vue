@@ -14,7 +14,7 @@
 				<view class="cate2" >
 						 <view class="cate2-item"@click="gotoList(item2)" v-for="(item2,i2) in cateList2" :key="i2">
 							 <image :src="item2.icon"></image>
-							 <text>{{item2.goods_name}}</text>
+							 <text class="text">{{item2.goods_name}}</text>
 						 </view>
 					
 				</view>
@@ -127,7 +127,11 @@
 			}
 		}
 	}
-	
+	.search{
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
 	.title{
 		font-size: 24rpx;
 		font-weight: bold;
@@ -151,7 +155,7 @@
 			height: 120rpx;
 			border-radius: 30rpx;
 		}
-		text{
+		.text{
 			padding-top: 10rpx;
 			font-size:24rpx;
 		}

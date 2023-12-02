@@ -24,10 +24,6 @@
          <view class="row2-right">{{addstr}}</view>
        </view>
      </view>
-<view class="test">
-	<text class="xiahua">我是一条下划线，我是一条下划线</text>
-</view>
-      
     </view>
   </view>
 </template>
@@ -144,12 +140,6 @@
 	    }
 	  }
 	}
-	.test{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 24rpx;
-		color: red;
-	}
+
 
 </style>

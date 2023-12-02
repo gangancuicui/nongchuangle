@@ -132,7 +132,7 @@
 	  color: black;
   }
   padding: 12rpx 0;
-  border-radius: 30rpx;
+  border-radius: 20rpx;
   color: #ffffff;
   margin-right: 20rpx;
   background-color: transparent;
@@ -140,10 +140,10 @@
 }
 
 .tab.active {
-  background-color: green;
+  background-color: rgb(0,170,0);
   color: #00aa00;
   text{
-  	  color: black;
+  	  color: #fff;
   }
 }
 
@@ -210,7 +210,7 @@
 
 .title {
   font-size: 36rpx;
-  font-weight: bold;
+  // font-weight: bold;
   margin-bottom: 10rpx;
   color: #333333;
 }
