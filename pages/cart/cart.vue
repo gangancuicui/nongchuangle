@@ -22,7 +22,8 @@
 		<my-settle></my-settle>
 	</view>
 	<view class="empty" v-else>
-		<text class="empty-text">是空的捏</text>
+		<img src="@/static/empty.png" alt="" />
+		<text class="empty-text">您的购物车是空的, 快去逛逛吧</text>
 	</view>
 		
 	</view>
@@ -97,12 +98,18 @@
 		  flex-direction: column;
 		  align-items: center;
 		  padding-top: 150px;
-		  
 	}
+	img {
+	    width: 140px;
+	    height: 92px;
+	    display: block;
+	    margin: 0 auto;
+	  }
 	.empty-text{
-		font-size: 12px;
-		    color: gray;
-		    margin-top: 15px;	  
+		    text-align: center;
+		    color: #666;
+		    margin: 30px;
+		  
 	}
 
 </style>
