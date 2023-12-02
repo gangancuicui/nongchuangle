@@ -1,7 +1,7 @@
 <template>
     <view class="container">
 		<view class="title">
-			<text>请输入标题</text>
+			<text>输入标题:</text>
 			<view class="input">
 				<input  type="text" focus placeholder="标题" @input="onKeyInput" >
 				</input>
@@ -9,16 +9,16 @@
 		</view>
 		
 		<view class="uni-list-cell">
-			<view class="uni-list-cell-left">选择你的文章类型</view>
-				<view class="uni-list-cell-db">
-					<picker @change="bindPickerChange" :value="index" :range="array">
-						<view class="uni-input">当前选择：{{array[index]}}</view>
-					</picker>
-				</view>
+			<view class="uni-list-cell-left">文章类型:</view>
+				<!-- <view class="uni-list-cell-db"> -->
+			<picker @change="bindPickerChange" :value="index" :range="array" class="uni-list-cell-right">
+					<view class="uni-input">{{array[index]}}</view>
+			</picker>
+				<!-- </view> -->
 		</view>
 		
 		<view class="upimg">	
-			<button class="button1" type="primary" @click="upimg"><text>上传封面图片</text></button>
+			<button class="share" type="primary" @click="upimg">上传封面图片</button>
 		</view>
 		
 		<view class="editor">
@@ -47,7 +47,7 @@
 		</view>
 		
 		<view class="up-load-paper">
-			<button type="primary" @click="uploadPaper">分享</button>
+			<button class="share" type="primary" @click="uploadPaper">分享</button>
 		</view>
 		  
     </view>
@@ -362,7 +362,7 @@ export default {
     }
 };
 </script>
-<style>
+<style lang="scss">
 .container {
     max-width: 600px;
     /* margin: 10rpx auto; */
@@ -371,18 +371,44 @@ export default {
   }
 
   .title {
+	display: flex;
+	justify-content: left;
+	align-items: center;
     font-size: 36rpx;
     font-weight: bold;
     margin-bottom: 20px;
+	.input{
+		padding-left: 20rpx;
+		input{
+			  /* padding: 10px; */
+			  flex: 1;
+			  width: 100%;
+				padding-left: 20rpx;
+			  border: none;
+			  border-radius: 5rpx;
+			  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			  font-size: 16px;
+			  
+				 /* margin-bottom: 10px; */
+	}} 
   }
 
   .section {
     margin-bottom: 20px;
   }
+  .uni-list-cell {
+	  display: flex;
+  }
   .uni-list-cell-left{
+	  // flex:1;
 	  font-size: 36rpx;
 	      font-weight: bold;
 	      margin-bottom: 20px;
+  }
+  .uni-list-cell-right {
+	  flex:1;
+	  justify-content: left;
+	  padding-left: 40rpx;
   }
 
   .label {
@@ -391,40 +417,22 @@ export default {
     margin-bottom: 10px;
   }
 
-  .input {
-    display: flex;
-    align-items: center;
-	margin-top: 10px;
-  }
-
-  picker,
-  input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    flex: 1;
-	 margin-bottom: 10px;
-  }
-
   .button1 {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #007aff;
     color: #fff;
-    font-size: 16px;
     cursor: pointer;
-	height: 100rpx;
+	height: 80rpx;
 	width: 500rpx;
-	font-size: 24rpx;
+	font-size: 30rpx;
+	text-align: center;
+	line-height: 80rpx;
   }
-
-  editor {
-    height: 300px;
-  }
-  button{
-	  border-radius: 30rpx;
+  .share {
+	  height: 80rpx;
+	  text-align: center;
+	  line-height: 80rpx;
   }
 </style>
