@@ -180,7 +180,7 @@
 					this.getWarning()
 			},
 			myTimes(item){
-			 	return item.fxDate.slice(6)
+			 	return item.fxDate.slice(5)
 			},
 			myTimess(item){
 				return item.pubTime.slice(0,10)+" "+item.pubTime.slice(11,16)
