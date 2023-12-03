@@ -136,8 +136,23 @@
 				}
 			},
 			buttonClick(e){
-				console.log(1)
+				
 				console.log(e)
+				if(e.content.text == '立即购买'){
+					// const good={
+					// 	goods_id: this.goodsInfo.goods_id,
+					// 	goods_name:this.goodsInfo.goods_name,
+					// 	goods_price:this.goodsInfo.goods_price,
+					// 	goods_count:1,
+					// 	goods_small_logo:this.goodsInfo.pics[0].pics_big,
+					// 	goods_state:true
+					// }
+					// this.addCart(good)
+					wx.showToast({
+					  title: "请添加到购物车后结算",
+					  icon: "error"
+					})
+				}
 				if(e.content.text == '加入购物车'){
 					const good={
 						goods_id: this.goodsInfo.goods_id,
