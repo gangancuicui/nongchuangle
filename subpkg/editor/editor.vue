@@ -20,6 +20,9 @@
 		<view class="upimg">	
 			<button class="share" type="primary" @click="upimg">上传封面图片</button>
 		</view>
+		<view class="titleImg">
+			<img :src="coverimg" alt="">
+		</view>
 		
 		<view class="editor">
 			<richText
@@ -75,6 +78,7 @@ export default {
             textTool: '',
 			array: ['选种', '种植', '销售'],
 			index: 0,
+			
         };
     },
     /**
@@ -102,6 +106,20 @@ export default {
 		},
 		
 		async addData(){
+			if(this.title==""){
+				wx.showToast({
+				  title: "请添加标题",
+				  icon: "error"
+				})
+				return;
+			}
+			if(this.coverimg==""){
+				wx.showToast({
+				  title: "请添加头图",
+				  icon: "error"
+				})
+				return;
+			}
 			wx.showLoading({
 			      title: "插入中",
 			      mask: true
@@ -167,6 +185,12 @@ export default {
 				filePath:path
 			}).then(res=>{
 				this.coverimg=res.fileID
+				
+				uni.showToast({
+					title:"上传成功",
+					icon:'success', 
+					duration: 2000
+				})
 			}).catch(error => {
 				uni.showToast({
 					title:"失败",
@@ -432,7 +456,15 @@ export default {
   }
   .share {
 	  height: 80rpx;
+	  margin-bottom: 20rpx;
 	  text-align: center;
 	  line-height: 80rpx;
+  }
+  .titleImg img{
+	  width: 100%;
+	  height: 300rpx;
+  }
+  .titleImg{
+	  height: 200rpx;
   }
 </style>
