@@ -149,7 +149,7 @@
 					// }
 					// this.addCart(good)
 					wx.showToast({
-					  title: "请添加到购物车后结算",
+					  title: "请添加到购物车",
 					  icon: "error"
 					})
 				}

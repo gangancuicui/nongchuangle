@@ -36,7 +36,7 @@ export default {
 	    },
   },
   methods:{
-	  ...mapMutations('m_cart', ['updateAllGoodsState']),
+	  ...mapMutations('m_cart', ['updateAllGoodsState', 'removeGoodsById']),
 	  ...mapMutations('m_user', ['updateRedirectInfo']),
 	  changeAllState(){
 		  this.updateAllGoodsState(!this.isFullCheck)
@@ -126,6 +126,12 @@ export default {
 			   uni.navigateTo({
 			   	url: '/subpkg/order-detail/order-detail?_id='+ orderInfo._id
 			   });
+			   var delGoodsList=this.cart.filter(x => x.goods_state).map(x => ({ goods_id: x.goods_id}));
+			   console.log(1)
+			   console.log(delGoodsList)
+			   for(var i=0;i<delGoodsList.length;i++){
+				   this.removeGoodsById(delGoodsList[i].goods_id)
+			   }
 	  },
 		  getCurrentDateTime() {
 			const now = new Date();
