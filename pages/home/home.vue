@@ -93,12 +93,25 @@
 			}
 		},
 		onLoad() {
+			
 			this.getfloorList()
 			this.getSwiperList()
+			
+			
 
 			
 
 
+		},
+		onPullDownRefresh(){
+			wx.showLoading({
+			      title: "更新中",
+			      mask: true
+			})
+			this.getfloorList()
+			this.getSwiperList()
+			wx.stopPullDownRefresh()
+			wx.hideLoading()
 		},
 		methods: {
 			...mapMutations('m_cart', ['addCart']),
