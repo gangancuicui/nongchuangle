@@ -36,7 +36,7 @@
 				</view>
 			</view>
 		</view> -->
-		<view class="Index">
+		<view class="Index" v-if="floorList.length!=0">
 			<view class="pubuBox">
 				<view class="pubuItem">
 					<view class="item-masonry" v-for="(item, index) in floorList" :key="index">
@@ -93,9 +93,10 @@
 			}
 		},
 		onLoad() {
+			this.getfloorList()
 			this.getSwiperList()
 
-			this.getfloorList()
+			
 
 
 		},
@@ -118,8 +119,6 @@
 				let db = uni.cloud.database().collection('swiper-list')
 				await db.get({
 					success: (test) => {
-						
-
 						this.swiperList = test.data[0].message
 
 					}
