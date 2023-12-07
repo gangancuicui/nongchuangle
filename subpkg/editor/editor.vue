@@ -19,6 +19,7 @@
 		
 		<view class="upimg">	
 			<button class="share" type="primary" @click="upimg">上传封面图片</button>
+			<button class="del" type="primary" @click="delImg" v-if="coverimg.length!=0">删除封面图片</button>
 		</view>
 		<view class="titleImg">
 			<img :src="coverimg" alt="">
@@ -165,6 +166,29 @@ export default {
 		},
 		uploadPaper(e){
 			this.addData()
+		},
+		delImg(e){
+			if(this.coverimg==""){
+				wx.showToast({
+				  title: "插入失败",
+				  icon: "请先添加图片"
+				})
+				return;
+			}
+			wx.cloud.deleteFile({
+			  fileList: [this.coverimg],
+			  success: res => {
+			    console.log(res.fileList);
+				wx.showToast({
+				  title: "删除成功",
+				  icon: "success"
+				})
+				this.coverimg="";
+				
+			  },
+			  fail: console.error
+			})
+			
 		},
 		upimg(e){
 			console.log(this.userinfo)
@@ -393,6 +417,9 @@ export default {
 	padding: 20rpx;
 	
   }
+  .upimg{
+	  display: flex;
+  }
 
   .title {
 	display: flex;
@@ -454,7 +481,7 @@ export default {
 	text-align: center;
 	line-height: 80rpx;
   }
-  .share {
+  .share .del{
 	  height: 80rpx;
 	  margin-bottom: 20rpx;
 	  text-align: center;
