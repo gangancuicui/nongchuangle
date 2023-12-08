@@ -132,7 +132,7 @@
 				let db = uni.cloud.database().collection('swiper-list')
 				await db.get({
 					success: (test) => {
-						this.swiperList = test.data[0].message
+						this.swiperList = test.data
 
 					}
 				})
