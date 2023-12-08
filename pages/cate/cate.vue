@@ -57,12 +57,6 @@
 						
 					}
 				})
-				
-				// const {data:res} = await uni.$http.get('/api/public/v1/categories')
-				// if(res.meta.status !== 200) return uni.$showMsg()
-				// console.log(res.message[0].children)
-				// this.cateList=res.message
-				// this.cateList2=res.message[0].children
 			},
 			activeChanged(i){
 				console.log(i)
@@ -77,10 +71,6 @@
 				}
 			},
 			gotoList(item){
-				// console.log(item)
-				// uni.navigateTo({
-				// 	url:'/subpkg/goods_list/goods_list?cid=' + item.cat_id
-				// })
 				uni.navigateTo({
 					url:'/subpkg/goods_detail/goods_detail?goods_id='+item.goods_id
 				})

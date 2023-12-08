@@ -35,19 +35,12 @@
 	export default {
 		data() {
 			return {
-				//address:{}
+
 			};
 		},
 		computed:{
 			 ...mapState('m_user', ['address']),
 			 ...mapGetters('m_user', ['addstr']),
-			// addstr() {
-			//       if (!this.address.provinceName) return ''
-			
-			//       // 拼接 省，市，区，详细地址 的字符串并返回给用户
-			//       return this.address.provinceName + this.address.cityName + this.address.countyName + this.address.detailInfo
-			//     },
-			//},
 			
 		},
 		methods:{
@@ -58,7 +51,6 @@
 				const succ = await uni.chooseAddress()
 				console.log(2)
 				if(succ.errMsg === 'chooseAddress:ok'){
-					//this.address=succ
 					this.updateAddress(succ)
 				}
 				 if (succ.errMsg === 'chooseAddress:fail auth deny'|| succ.errMsg === 'chooseAddress:fail authorize no response') {
@@ -105,7 +97,6 @@
 	  justify-content: center;
 	}
 	
-	// 渲染收货信息的盒子
 	.address-info-box {
 	  font-size: 12px;
 	  height: 90px;
@@ -114,7 +105,6 @@
 	  justify-content: center;
 	  padding: 0 5px;
 	
-	  // 第一行
 	  .row1 {
 	    display: flex;
 	    justify-content: space-between;
@@ -128,8 +118,6 @@
 	      }
 	    }
 	  }
-	
-	  // 第二行
 	  .row2 {
 	    display: flex;
 	    align-items: center;

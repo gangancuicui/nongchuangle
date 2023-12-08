@@ -100,7 +100,6 @@
 }
 
 .top {
-  //background-color: #ffffff;
   height: 88rpx;
   color: #ffffff;
   display: flex;
@@ -193,8 +192,6 @@
   font-size: 24rpx;
   color: #74c58e;
   position: absolute;
-  //bottom: 0rpx;
-  //right: 10rpx;
   bottom: 15rpx;
   right: 20rpx;
 }
@@ -202,15 +199,12 @@
 	font-size: 24rpx;
 	color: #74c58e;
 	position: absolute;
-	//bottom: 0rpx;
-	//right: 10rpx;
 	bottom: 15rpx;
 	left: 240rpx;
 }
 
 .title {
   font-size: 36rpx;
-  // font-weight: bold;
   margin-bottom: 10rpx;
   color: #333333;
 }

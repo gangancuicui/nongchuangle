@@ -44,8 +44,6 @@
 			};
 		},
 		onLoad(options) {
-			//this.orderInfo=JSON.parse(options.orderInfo)
-			//console.log(this.orderInfo)
 			let db=uni.cloud.database().collection('order').where({_id:options._id})
 			db.get({
 				success :(res)=>{
@@ -81,10 +79,6 @@
 						  	})
 						  }
 					})
-					// wx.navigateBack({
-					//   delta: 1
-					// })
-					// uni.navigateTo({ url: '/subpkg/pay-result/pay-result' });
 					
 				}else if(e.currentTarget.id==2){
 					const db=wx.cloud.database()
@@ -107,10 +101,6 @@
 							            }, 1000);
 							         }
 							})
-								
-							  // wx.navigateBack({
-							  //   delta: 1
-							  // })
 						  }
 					})
 					
@@ -124,7 +114,6 @@
 </script>
 
 <style lang="scss">
-/* 样式可以根据需要进一步调整 */
   .address {
     margin-bottom: 20px;
   }
@@ -157,8 +146,8 @@
   }
 
   .logo img {
-    width: 80px; /* 调整商品图片的大小 */
-    height: 80px; /* 调整商品图片的大小 */
+    width: 80px; 
+    height: 80px; 
   }
 
   .details {
@@ -197,7 +186,6 @@
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    //background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;

@@ -11,14 +11,11 @@
 			
 			<view class="body">
 				<view class="price">￥{{goodsInfo.goods_price}}<text>/500g</text></view>
-				<!-- <view class="fav">
-					<uni-icons type='star' size='18' color='gray'></uni-icons>
-					<text>收藏</text>
-				</view> -->
+				
 			</view>
 			<view class="yunfei">快递：免运费</view>
 		</view>
-		<!--<rich-text :nodes="goodsInfo.goods_introduce"></rich-text>-->
+	
 		<text>产品产地：{{chandi}}</text>
 		<view class="location">
 			 <map
@@ -94,12 +91,7 @@
 		methods:{
 			 ...mapMutations('m_cart', ['addCart']),
 			async getGoodsDetail(goodsId){
-				// const{data:res} =await uni.$http.get('/api/public/v1/goods/detail', { goods_id:goodsId })
-				// if (res.meta.status !== 200) return uni.$showMsg()
-				// res.message.goods_introduce = res.message.goods_introduce.
-				// replace(/<img /g, '<img style="display:block;" ').replace(/webp/g, 'jpg')
-				// console.log(res.message)
-				// this.goodsInfo=res.message
+				
 				let db=uni.cloud.database().collection('goods').where({goods_id:goodsId})
 				db.get({
 					success :(test)=>{						
@@ -107,15 +99,14 @@
 						this.goodsInfo=test.data[0]
 						this.latitude=parseFloat(test.data[0].goods_latitude)
 						this.longitude=parseFloat(test.data[0].goods_longitude)
-						//console.log(this.latitude)
 						this.markers=[{
 						  id: 1,
 						  latitude: test.data[0].goods_latitude,
 						  longitude: test.data[0].goods_longitude,
-						  //name: 'T.I.T 创意园',
+						 
 						width: '20', // 标记点图标宽
 						 height: '20' // 标记点图标高度
-						 //iconPath: 'https://hellouniapp.dcloud.net.cn/static/location.png'
+						
 						}]
 						this.getChanDi()
 					}
@@ -139,15 +130,7 @@
 				
 				console.log(e)
 				if(e.content.text == '立即购买'){
-					// const good={
-					// 	goods_id: this.goodsInfo.goods_id,
-					// 	goods_name:this.goodsInfo.goods_name,
-					// 	goods_price:this.goodsInfo.goods_price,
-					// 	goods_count:1,
-					// 	goods_small_logo:this.goodsInfo.pics[0].pics_big,
-					// 	goods_state:true
-					// }
-					// this.addCart(good)
+					
 					wx.showToast({
 					  title: "请添加到购物车",
 					  icon: "error"

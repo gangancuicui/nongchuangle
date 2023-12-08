@@ -10,11 +10,9 @@
 		
 		<view class="uni-list-cell">
 			<view class="uni-list-cell-left">文章类型:</view>
-				<!-- <view class="uni-list-cell-db"> -->
 			<picker @change="bindPickerChange" :value="index" :range="array" class="uni-list-cell-right">
 					<view class="uni-input">{{array[index]}}</view>
 			</picker>
-				<!-- </view> -->
 		</view>
 		
 		<view class="upimg">	
@@ -335,15 +333,7 @@ export default {
 								duration: 2000
 							})
 						})						
-					//console.log(path)
-					// this.$refs.richText
-     //                    .insertImageMethod(path)
-     //                    .then((res) => {
-     //                        console.log('[insert image success callback]=>', res);
-     //                    })
-     //                    .catch((res) => {
-     //                        console.log('[insert image fail callback]=>', res);
-     //                    });
+
                 }
             });
         },
@@ -393,8 +383,6 @@ export default {
             //this.handleDataset(res, _dataset);
             /* ---处理dataset end--- */
             let { value } = res.detail;
-			//console.log(res.detail.__args__[0].detail.value.detail.html)
-            // console.log('[bindinput callback]=>', value)
 			console.log(1)
 			console.log( app.globalData)
             app.globalData.data.richTextContents = res.detail.__args__[0].detail.value.detail.html;
@@ -413,7 +401,6 @@ export default {
 <style lang="scss">
 .container {
     max-width: 600px;
-    /* margin: 10rpx auto; */
 	padding: 20rpx;
 	
   }
@@ -431,7 +418,6 @@ export default {
 	.input{
 		padding-left: 20rpx;
 		input{
-			  /* padding: 10px; */
 			  flex: 1;
 			  width: 100%;
 				padding-left: 20rpx;
@@ -440,7 +426,6 @@ export default {
 			  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 			  font-size: 16px;
 			  
-				 /* margin-bottom: 10px; */
 	}} 
   }
 
@@ -451,7 +436,6 @@ export default {
 	  display: flex;
   }
   .uni-list-cell-left{
-	  // flex:1;
 	  font-size: 36rpx;
 	      font-weight: bold;
 	      margin-bottom: 20px;

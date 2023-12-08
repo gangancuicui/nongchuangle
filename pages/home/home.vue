@@ -73,35 +73,23 @@
 	import {
 		mapGetters
 	} from 'vuex'
-	// import flowLayout from "@/components/eiml-flow/eiml-flow.vue"
+	
 	export default {
 		mixins: [badgeMix],
 		computed: {
 			...mapState('m_cart', ['cart']),
 			...mapGetters('m_cart', ['total']),
 		},
-		// components:{
-		//     'flowLayout':flowLayout
-		// },
+		
 		data() {
 			return {
 				swiperList: [],
-
 				floorList: [],
-
-
 			}
 		},
 		onLoad() {
-			
 			this.getfloorList()
 			this.getSwiperList()
-			
-			
-
-			
-
-
 		},
 		onPullDownRefresh(){
 			wx.showLoading({
@@ -219,8 +207,8 @@
 			float: left;
 			margin-left: 10rpx;
 
-			border-top-left-radius: 36rpx; //左上角圆角
-			border-bottom-left-radius: 36rpx; //左下角圆角
+			border-top-left-radius: 36rpx;
+			border-bottom-left-radius: 36rpx; 
 			color: #fff;
 
 			.text {
@@ -253,20 +241,10 @@
 		}
 	}
 
-	// .temai image{
-	// 	  padding: 5rpx;
-	// 	  height: 40px;
-	// 	  width: 100px;
-	// }
-	// .fenge{
-	// 	height: 5rpx;
-	// 	background-color: #d0d0d0;
-	// }
+	
 	.temai {
 		image {
-			//position: absolute;
-			// top:400rpx;
-			// right: 300rpx;
+			
 			height: 100rpx;
 			width: 200rpx;
 		}
@@ -274,30 +252,7 @@
 
 
 
-	// .nav-list{
-	// 	display: flex;
-	// 	justify-content: space-around;
-	// 	margin: 15rpx 0;
 
-	// 	.nav-img{
-	// 		width: 128rpx;
-	// 		height: 140rpx;
-	// 	}
-	// }
-	// .floor-title{
-	// 	height: 60rpx;
-	// 	width: 100%;
-	// 	display: flex;
-	// }
-	// .floot-right-box{
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// 	justify-content: space-around;
-	// }
-	// .floot-img-box{
-	// 	display: flex;
-	// 	padding-left: 10rpx;
-	// }
 	.lists {
 		display: flex;
 		flex-wrap: wrap;
@@ -325,7 +280,7 @@
 		width: 50%;
 
 		display: block;
-		//border-radius: 10px; /* 起作用 */
+		
 	}
 
 
@@ -345,11 +300,7 @@
 	.add {
 		background: orange;
 		color: #fff;
-
-		// padding: 5px 10px;
 		border-radius: 5px;
-		// bottom: 10rpx;
-		// right: 10px;
 		width: 200rpx;
 		height: 50rpx;
 		font-size: 20rpx;
@@ -371,7 +322,6 @@
 		overflow: hidden;
 		background-color: #fff;
 		break-inside: avoid;
-		/*避免在元素内部插入分页符*/
 		box-sizing: border-box;
 		margin-bottom: 20rpx;
 		box-shadow: 0px 0px 28rpx 1rpx rgba(78, 101, 153, 0.14);

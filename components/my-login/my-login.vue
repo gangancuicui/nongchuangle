@@ -92,10 +92,6 @@
 			 close() {
 			 	this.show = false;
 			 },
-			 // onChooseAvatar(event) {
-			 // 	// Update avatar with the chosen one
-				// console.log(e)
-			 // },
 			 
 			
 			getUserInfo(e){
@@ -126,33 +122,7 @@
 								})
 							  }
 							})
-							// console.log(2)
-							 //console.log(_this.openid)
-							//this.loginafter()
 							
-							
-							//_this.show = true;
-				   //         uni.getUserProfile({
-				   //          desc: '获取你的昵称、头像、地区及性别',
-				   //          success: res => {
-				   //            console.log(res);
-				   //            console.log(1);
-							// //this.onSaveUserInfo(res)
-							// _this.updateUserInfo(res.userInfo)
-							//   _this.getToken(res)
-							  
-				   //          },
-				   //          fail: res => {
-				   //            console.log(res)
-				   //            //拒绝授权
-				   //             uni.showToast({
-				   //              title: '您拒绝了请求,不能正常使用小程序',
-				   //              icon: 'error',
-				   //              duration: 2000
-				   //            });
-				   //            return;
-				   //          }
-				   //        });
 				        } else if (res.cancel) {
 				          //如果用户点击了取消按钮
 				           uni.showToast({
@@ -164,9 +134,6 @@
 				        }
 				      }
 				    });
-				//console.log(e.detail.userInfo)
-				//this.updateUserInfo(e.detail.userInfo)
-				//this.getToken(e.detail)
 			},
 			loginafter(){
 				const db = wx.cloud.database().collection('users').where({openid:this.openid})
@@ -204,7 +171,6 @@
 			     signature,
 			     code,
 			   });
-			   // message 对象不为空，才能获取到 token
 			   if (res.message) {
 			     // 提取出 token
 			     const { token } = res.message;
@@ -220,9 +186,6 @@
 			},
 			async getToken(info){
 				const res = await uni.login()
-				// if(res.errMsg !== 'login:ok') {
-				// 	return uni.$showError('登录失败！')
-				// }
 				const query={
 					code: res.code,
 					encryptedData: info.encryptedData,
@@ -230,20 +193,14 @@
 					rawData: info.rawData,
 					signature: info.signature
 				}
-				// const { data: loginResult } = await uni.$http.post('/api/public/v1/users/wxlogin', query)
-				//   if (loginResult.meta.status !== 200) return uni.$showMsg('登录失败！')
 				  uni.$showMsg('登录成功')
 				  this.navigateBack()
 				this.updateToken('token')
 			},
 			navigateBack() {
-			  // redirectInfo 不为 null，并且导航方式为 switchTab
 			  if (this.redirectInfo && this.redirectInfo.openType === 'switchTab') {
-			    // 调用小程序提供的 uni.switchTab() API 进行页面的导航
 			    uni.switchTab({
-			      // 要导航到的页面地址
 			      url: this.redirectInfo.from,
-			      // 导航成功之后，把 vuex 中的 redirectInfo 对象重置为 null
 			      complete: () => {
 			        this.updateRedirectInfo(null)
 			      }

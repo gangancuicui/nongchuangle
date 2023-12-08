@@ -11,15 +11,12 @@
 	export default {
 		name:"my-search",
 		props: {
-		  // 背景颜色
 		  bgcolor: {
 		    type: String,
 		    default: '#00aa00'
 		  },
-		  // 圆角尺寸
 		  radius: {
 		    type: Number,
-		    // 单位是 px
 		    default: 18
 		  }
 		},

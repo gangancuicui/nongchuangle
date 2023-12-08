@@ -18,11 +18,6 @@
 			    @insertImageEvent="insertImageEvent($event, { tagId: 'richText' })"
 			    @getEditorContent="getEditorContent($event, { tagId: 'richText' })"
 			></richText>
-			<!--<view class="tip">
-			    备注：
-			    <view>1.改变图片大小，按住节点一小会儿再拖动。别问我为什么，谁还没遇到点难解决需求了。</view>
-			    <view>2.预览内容中，图片仅支持网络url。</view>
-			</view>-->
 		</view>
 		
 		<view class="up-load-paper">
@@ -265,15 +260,7 @@ export default {
 								duration: 2000
 							})
 						})						
-					//console.log(path)
-					// this.$refs.richText
-     //                    .insertImageMethod(path)
-     //                    .then((res) => {
-     //                        console.log('[insert image success callback]=>', res);
-     //                    })
-     //                    .catch((res) => {
-     //                        console.log('[insert image fail callback]=>', res);
-     //                    });
+					
                 }
             });
         },
@@ -302,41 +289,29 @@ export default {
         //编辑器聚焦时触发
         bindfocus(res, _dataset) {
             /* ---处理dataset begin--- */
-            //this.handleDataset(res, _dataset);
             /* ---处理dataset end--- */
             let { value } = res.detail;
-            // console.log('[bindfocus callback]=>', value)
         },
 
         //编辑器失去焦点时触发
         bindblur(res, _dataset) {
             /* ---处理dataset begin--- */
-            //this.handleDataset(res, _dataset);
             /* ---处理dataset end--- */
             let { value } = res.detail;
-            // console.log('[bindblur callback]=>', value)
         },
 
         //编辑器输入中时触发
         bindinput(res) {
             /* ---处理dataset begin--- */
-            //this.handleDataset(res, _dataset);
             /* ---处理dataset end--- */
             let { value } = res.detail;
-			//console.log(res.detail.__args__[0].detail.value.detail.html)
-            // console.log('[bindinput callback]=>', value)
 			console.log(1)
 			console.log( app.globalData)
             app.globalData.data.richTextContents = res.detail.__args__[0].detail.value.detail.html;
 			
         },
 
-        //预览富文本
-        preview() {
-            uni.navigateTo({
-                url: `../preview/preview`
-            });
-        }
+       
     }
 };
 </script>

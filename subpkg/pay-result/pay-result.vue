@@ -23,7 +23,6 @@
 		methods:{
 			return1(e){
 				console.log(e)
-				//uni.switchTab({ url: '/pages/home/home' });
 				wx.navigateBack({
 						    delta: 2
 						  })
