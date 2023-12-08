@@ -78,16 +78,6 @@
                 
                 }
                 ,{
-                    "path" : "goods_list/goods_list",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": true
-					
-                }
-                
-                }
-                ,{
                     "path" : "search/search",
                     "style" :                                                                                    
                 {
