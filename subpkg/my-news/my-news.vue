@@ -10,15 +10,19 @@
       </scroll-view>
     </view>
     <view class="news-list">
-      <view class="news-item" v-for="(item, index) in newsList" :key="index" @click="goToDetail(item._id, item.title)">
-        <view class="image">
-          <image :src="item.img" mode="aspectFill"/>
-        </view>
-			<view class="info">
-				<text class="date">发布时间：{{ item.cTime}}</text>
-				<text class="title">{{ item.title }}</text>
-				<text class="author">作者：{{item.author}}</text>
-			</view>
+      <view class="news-item" v-for="(item, index) in newsList" :key="index" >
+		  <view class="test" @click="goToDetail(item._id, item.title)">
+		  	<view class="image">
+		  	  <image :src="item.img" mode="aspectFill"/>
+		  	</view>
+		  		<view class="info">
+		  			<text class="date">发布时间：{{ item.cTime}}</text>
+		  			<text class="title">{{ item.title }}</text>
+		  			<text class="author">作者：{{item.author}}</text>
+		  		</view>
+		  </view>
+			<button class="del" @click="delById(item._id,item.paperid)">删除</button>
+			
       </view>
     </view>
   </view>
@@ -70,6 +74,42 @@
 				        console.log('res')
 				      }
 				    })
+			},
+			selectByFlag(){
+				const db =wx.cloud.database().collection('farmer').where({paperid:this.flag, _openid:this.openid})
+				db.get({
+				  success: (res)=>{
+				    console.log(res);
+				      this.newsList=res.data
+				    console.log('res')
+				  }
+				})
+			},
+			delById(id,pid){
+				var _this=this;
+				wx.showModal({
+					  title: '提示',
+					  content: '是否确认删除',
+					  success (res) {
+					    if (res.confirm) {
+					      console.log('用户点击确定')
+						  let db = wx.cloud.database() //设置数据库
+						  let userCollection = db.collection('farmer') //单引号里为刚刚新建的集合名
+						  userCollection.where({
+						  	//先查询
+						  	_id: id
+						  }).remove().then(res => {
+						  	console.log('删除成功')
+						  	_this.selectByFlag();
+						  }).catch(err => {
+						  	console.log('删除失败',err)//失败提示错误信息
+						  })
+					    } else if (res.cancel) {
+					      console.log('用户点击取消')
+					    }
+					  }
+					})
+				
 			}
 		}
 	}
@@ -169,6 +209,7 @@
 .info {
   flex: 1;
  
+ 
 }
 .date {
   font-size: 24rpx;
@@ -186,10 +227,19 @@
 }
 
 .title {
+	position: absolute;
+	left: 250rpx;
+	top: 10rpx;
   font-size: 36rpx;
   font-weight: bold;
   margin-bottom: 10rpx;
   color: #333333;
+}
+.del{
+	position: absolute;
+	color: red;
+	left: 550rpx;
+	top: 60rpx;
 }
 
 

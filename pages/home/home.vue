@@ -104,7 +104,8 @@
 		methods: {
 			...mapMutations('m_cart', ['addCart']),
 			async getfloorList() {
-				let db = uni.cloud.database().collection('goods').where({
+				let db = uni.cloud.database().collection('goods')
+				.where({
 					cate: "vegetable"
 				})
 				await db.get({
